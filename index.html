@@ -1,467 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adobe - Creative, Marketing and Document Solutions</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f8f8;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #ff0000, #cc0000);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 2rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #000000, #333333);
-            color: white;
-            padding: 150px 0 100px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 300;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #ff0000;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            transition: background 0.3s;
-        }
-
-        .cta-button:hover {
-            background: #cc0000;
-        }
-
-        /* Products Section */
-        .products {
-            padding: 80px 0;
-            background: white;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .product-card {
-            background: #f8f8f8;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid #e0e0e0;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .product-icon {
-            width: 80px;
-            height: 80px;
-            background: #ff0000;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .product-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-
-        .product-card p {
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .learn-more {
-            color: #ff0000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .learn-more:hover {
-            text-decoration: underline;
-        }
-
-        /* About Section */
-        .about {
-            padding: 80px 0;
-            background: #f0f0f0;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 1rem;
-            background: white;
-            border-radius: 5px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #ff0000;
-        }
-
-        .stat-label {
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: #ff0000;
-        }
-
-        .footer-section ul {
-            list-style: none;
-        }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #555;
-            padding-top: 1rem;
-            color: #ccc;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .stats {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aravindan Kamatchi Sunadaram - Research Resume</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    header p {
+      margin: 0.5rem 0 0;
+      font-size: 1.1rem;
+    }
+    section {
+      padding: 2rem 3rem;
+      margin: auto;
+      max-width: 900px;
+    }
+    h2 {
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .research-highlight {
+      background: #eef6ff;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      border-left: 5px solid #3498db;
+      border-radius: 6px;
+    }
+    .research-highlight h3 {
+      margin-top: 0;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.5rem;
+    }
+    .compact {
+      font-size: 0.95rem;
+      color: #444;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav class="container">
-            <a href="#" class="logo">Adobe</a>
-            <ul class="nav-links">
-                <li><a href="#products">Products</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Creativity for all</h1>
-            <p>Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications.</p>
-            <a href="#products" class="cta-button">Explore Products</a>
-        </div>
-    </section>
+  <header>
+    <h1>Aravindan Kamatchi Sunadaram</h1>
+    <p>MM21B010 | IIT Madras | B.Tech + M.Tech Data Science (2025)</p>
+  </header>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-        <div class="container">
-            <h2 class="section-title">Creative Cloud Products</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="product-icon">🎨</div>
-                    <h3>Photoshop</h3>
-                    <p>The world's best imaging and graphic design software. Create and enhance photographs, illustrations, and 3D artwork.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">✏️</div>
-                    <h3>Illustrator</h3>
-                    <p>Create beautiful vector art and illustrations. Design everything from simple icons to complex illustrations.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🎬</div>
-                    <h3>Premiere Pro</h3>
-                    <p>Industry-leading video editing software. Edit footage in any modern format, from 8K to virtual reality.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🎞️</div>
-                    <h3>After Effects</h3>
-                    <p>Create cinematic movie titles, intros, and transitions. Add visual effects and motion graphics to videos.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">📄</div>
-                    <h3>Acrobat Pro</h3>
-                    <p>The complete PDF solution for working anywhere. Create, edit, and share PDFs with confidence.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-                <div class="product-card">
-                    <div class="product-icon">🎨</div>
-                    <h3>Creative Cloud</h3>
-                    <p>Get the entire collection of creative apps plus exclusive business features that bring the best of Adobe to your enterprise.</p>
-                    <a href="#" class="learn-more">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <section>
+    <h2>Research Experience</h2>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>About Adobe</h2>
-                    <p>Adobe is changing the world through digital experiences. We help our customers create, deliver and optimize content and applications.</p>
-                    <p>Founded in 1982, Adobe has revolutionized how the world engages with ideas and information. From our founding products PostScript and PDF to the Creative Cloud and beyond, we've always been at the forefront of digital innovation.</p>
-                    <p>Today, Adobe serves creative professionals, marketers, developers, and enterprises worldwide with innovative solutions that empower creativity and drive digital transformation.</p>
-                </div>
-                <div class="stats">
-                    <div class="stat">
-                        <div class="stat-number">26M+</div>
-                        <div class="stat-label">Creative Cloud Subscribers</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">165</div>
-                        <div class="stat-label">Countries Served</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">22K+</div>
-                        <div class="stat-label">Employees Worldwide</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-number">1982</div>
-                        <div class="stat-label">Founded</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="research-highlight">
+      <h3>Research Intern – Adobe (May ’25 – Aug ’25)</h3>
+      <p><strong>Smart Design: Fix Layout Issues as You Create</strong></p>
+      <ul>
+        <li>Developed a smart layout correction system that auto-propagates corrections across design elements in Adobe Express.</li>
+        <li>Built a scalable data curation pipeline generating 650,000+ datapoints for multi-modal fine-tuning.</li>
+        <li>Pre-trained and fine-tuned Qwen2.5-7B MLLM using PEFT-LoRA for real-time, intent-driven design suggestions.</li>
+        <li>Improved FID by 50% and VLM-as-judge scores by 33%, demonstrating workflow effectiveness.</li>
+        <li>First author in a filed patent; writing a peer-reviewed paper on the system’s impact.</li>
+      </ul>
+    </div>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Products</h3>
-                    <ul>
-                        <li><a href="#">Creative Cloud</a></li>
-                        <li><a href="#">Photoshop</a></li>
-                        <li><a href="#">Illustrator</a></li>
-                        <li><a href="#">Premiere Pro</a></li>
-                        <li><a href="#">Acrobat</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Solutions</h3>
-                    <ul>
-                        <li><a href="#">For Business</a></li>
-                        <li><a href="#">For Education</a></li>
-                        <li><a href="#">For Government</a></li>
-                        <li><a href="#">For Nonprofits</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Support</h3>
-                    <ul>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">System Requirements</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="#">About Adobe</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">News</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Adobe Inc. All rights reserved. This is a sample website for demonstration purposes.</p>
-            </div>
-        </div>
-    </footer>
+    <div class="research-highlight">
+      <h3>Undergraduate Researcher – MI Lab, IITM (Aug ’24 – May ’25)</h3>
+      <p><strong>High Entropy Alloy Database using LLMs</strong></p>
+      <ul>
+        <li>Selected as <strong>1 of 30 Young Research Fellows</strong> (500+ applicants) under Dr. Rohit Batra.</li>
+        <li>Developed an LLM-based extraction pipeline, achieving ~0.90 F1 on text and ~0.95 F1 on tables.</li>
+        <li>Created the largest public HEA dataset with 180k+ records from 10k+ research articles.</li>
+        <li>Leveraged in-context learning with a custom vector DB containing 1000+ property descriptors.</li>
+        <li>Discovered new chemical trends via Ashby plots; framework extendable to other material domains.</li>
+        <li>First author of an upcoming publication; delivered oral presentation at <strong>AI4X 2025 (NUS)</strong>.</li>
+      </ul>
+    </div>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
+    <div class="research-highlight">
+      <h3>Research Intern – Adobe (May ’24 – Aug ’24)</h3>
+      <p><strong>CoCoNO: Attention Contrast-and-Complete for Noise Optimization in T2I Synthesis</strong></p>
+      <ul>
+        <li>Developed <strong>CoCoNO</strong>, a training-free framework addressing subject mixing & neglect in diffusion models.</li>
+        <li>Formulated novel attention-based contrast and completion losses for accurate noun representation.</li>
+        <li>Achieved SOTA results on Stable Diffusion v2.1: 76% VQAScore, 80% CLIP-TT across benchmarks.</li>
+        <li>First author publication accepted at <strong>ACM Multimedia 2025 (A* conference)</strong>; US patent granted.</li>
+      </ul>
+    </div>
+  </section>
 
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+  <section>
+    <h2>Education</h2>
+    <p><strong>IIT Madras</strong> – B.Tech Metallurgical & Materials Eng. + M.Tech Data Science (CGPA: 9.38, 2025)</p>
+    <p><strong>The Indian High School, Dubai</strong> – Class XII: 98.6% (2021), Class X: 97.67% (2019)</p>
+  </section>
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
+  <section>
+    <h2>Skills</h2>
+    <p class="compact">
+      Python (PyTorch, NumPy, Pandas, Huggingface, Transformers, OpenCV), MATLAB, C++;  
+      ML Ops: Docker, MLflow, FastAPI, Apache Airflow, DVC, Spark, Git, Prometheus, Grafana;  
+      Databases: PostgreSQL; Other: LaTeX, Video editing.
+    </p>
+  </section>
 
-        // Observe product cards for animation
-        document.querySelectorAll('.product-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+  <section>
+    <h2>Projects (Selected)</h2>
+    <ul class="compact">
+      <li>MLOps pipeline for cricket fantasy score prediction with Airflow, DVC, MLflow, Prometheus, Grafana.</li>
+      <li>Automated image-caption pipeline with Airflow, Selenium, PostgreSQL, and visualization UI.</li>
+      <li>Edge detection (VGG16 multiscale) – achieved SOTA results on BSDS500 dataset.</li>
+      <li>Deep learning transliteration models with seq2seq (RNN/LSTM/GRU + attention).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Extracurriculars</h2>
+    <p class="compact">Represented IITM in cricket; Runner-up Sanmar Inter-College Tournament (2024, Best Bowler). Member of Inter-IIT cricket team (2024). State U-19 Cricket (Dubai), Runner-up, Best Bowler (2022).</p>
+  </section>
+
 </body>
 </html>
